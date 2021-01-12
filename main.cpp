@@ -39,8 +39,31 @@ int main() {
     std::cerr << "m: " << e.what() << std::endl;
   }
 
+  m.damage();
+  std::cout << "m: "
+            << "Machine is broken" << std::endl;
+  m.fix();
+  std::cout << "m: "
+            << "Fixed! In stock: " << m.getStock() << " items" << std::endl;
+
   try {
     m2.sell(1);
+  } catch (std::exception &e) {
+    std::cerr << "m2: " << e.what() << std::endl;
+  }
+
+  try {
+    m2.fix();
+  } catch (std::exception &e) {
+    std::cerr << "m2: " << e.what() << std::endl;
+  }
+
+  m2.damage();
+  std::cout << "m2: "
+            << "Machine is broken" << std::endl;
+
+  try {
+    m2.refill(10);
   } catch (std::exception &e) {
     std::cerr << "m2: " << e.what() << std::endl;
   }

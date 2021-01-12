@@ -12,6 +12,8 @@ public:
   Machine(unsigned int _stock);
   void sell(unsigned int quantity);
   void refill(unsigned int quantity);
+  void damage();
+  void fix();
   unsigned int getStock();
   ~Machine();
 
